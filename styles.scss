@@ -1,0 +1,341 @@
+/*Color Palette*/
+$colorPrimary: #e0fdf6;
+$colorSecondary: #56d0b2;
+$colorTertiary: #1abbd1;
+$colorText: #413f3f;
+$colorShadow: #bdbbbb;
+
+$boxShadow: 0 2px 10px $colorShadow;
+$boxShadowDark: 0 2px 10px $colorText;
+$textShadow: 2px 2px 5px $colorShadow;
+$textShadowDark: 2px 2px 5px $colorText;
+
+@mixin button {
+    @include transition();
+        text-decoration: none;
+        color: $colorText;
+        font-size: 1.5em;
+        border: 2px solid $colorSecondary;
+        padding: 0.3em;
+        &:hover {
+            background-color: $colorSecondary;
+            box-shadow: $boxShadow;
+        }
+}
+@mixin gradient($degree) {
+    background: $colorTertiary;
+    background: linear-gradient($degree, $colorSecondary 0%, $colorTertiary 100%);
+}
+@mixin transition {
+    transition: all 0.1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+       transform: translateX(100%);
+       opacity: 0%;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 100%;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+/*Overall Styles*/
+* {
+    font-family: 'Open Sans', sans-serif;
+    color: $colorText;
+}
+body {
+    background-color: $colorPrimary;
+}
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4em;
+    text-shadow: $textShadow;
+}
+.col-lg-6, .col-12 {
+    padding: 0;
+}
+
+/*Navigation*/
+nav {
+    &.bg-dark {
+        @include gradient($degree: 135deg);
+    }
+    .navbar-brand {
+        font-size: 2em;
+        font-family: 'Ubuntu', sans-serif;
+        color: $colorPrimary !important;
+    }
+}
+
+.landing {
+    text-shadow: $textShadow;
+    text-align: center;
+    h1 {
+        padding-top: 3em;
+        animation: ease-in-out 1s fadeIn;
+    }
+    h2 {
+        margin-top: 1em;
+        margin-bottom: 3vh;
+        animation: ease-in-out 1s fadeIn;
+    }
+    a {
+        @include button();
+        animation: ease-in-out 1s fadeIn;
+    }
+    img {
+        width: 100%;
+        animation: ease-in-out 1s fadeIn;
+    }
+}
+.cards {
+    margin-top: 10vh;
+    animation: ease-in-out 1s fadeIn;
+    .card {
+        img {
+            @include transition();
+            box-shadow: $boxShadow;
+        }
+        &:hover {
+            img {
+                transform: scale(110%);
+            }
+        }
+        h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $colorPrimary;
+            text-align: center;
+            text-shadow: $textShadowDark;
+            font-weight: bold;
+        }
+    }
+}
+.join {
+    animation: ease-in-out 1s fadeIn;
+    margin-top: 10vh;
+    text-align: center;
+    figure {
+        margin: 0;
+        img {
+            width: 100%;
+        }
+    }
+    h1 {
+        margin-top: 10vh;
+    }
+    h2 {
+        margin-bottom: 3vh;
+    }
+    a {
+        @include button();
+        margin: 1em;
+    }
+}
+.about, .events {
+    section {
+        margin-top: 5vh;
+        article {
+            text-align: center;
+            h2 {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 2.5em;
+                text-align: center;
+            }
+            p {
+                text-align: justify;
+                padding: 0 2em 0 2em;
+            }
+            a {
+                @include button();
+            }
+        }
+        img {
+            width: 80%;
+            box-shadow: $boxShadow;
+        }
+        .text-center {
+            text-align: center;
+        }
+    }
+}
+.contact {
+    margin-top: 5vh;
+    text-align: center;
+    padding: 0;
+    .row {
+        padding: 0;
+        margin: 0;
+        figure {
+            margin: 0;
+        }
+    }
+    li {
+        padding: 1em;
+    }
+    img {
+        width: 100%;
+    }
+}
+footer {
+    @include gradient($degree: 135deg);
+    text-align: center;
+    padding-top: 3vh;
+    a {
+        margin: 1em;
+        i {
+            @include transition();
+            color: $colorPrimary;
+            font-size: 2em;
+            &:hover {
+                transform: scale(120%);
+            }
+        }
+    }
+    p {
+        color: $colorPrimary;
+    }
+}
+/*Mobile Phone*/
+@media only screen and (max-width: 430px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    nav {
+        .navbar-brand {
+            font-size: 1em;
+        }
+    }
+    .landing {
+        h1 {
+            padding-top: 1em;
+        }
+    }
+    .cards {
+        .card {
+            display: block;
+            margin: auto auto;
+            margin-top: 1em;
+        }
+    }
+    .join {
+        a {
+            display: block;
+            margin: auto auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            width: 50%;
+        }
+    }
+    .about, .events {
+        section {
+            article {
+                h2 {
+                    font-size: 1.5em;
+                }
+                a {
+                    display: block;
+                    margin: 1em auto 1em auto;
+                    width: 50%;
+                }
+            }
+            img {
+                display: block;
+                margin: auto auto;
+            }
+        }
+    }
+    .contact-info {
+        height: 60vh;
+    }
+}
+/*Tablet Portrait*/
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    nav {
+        .navbar-brand {
+            font-size: 2em;
+        }
+    }
+    .landing {
+        h1 {
+            padding-top: 1em;
+        }
+    }
+    .cards {
+        .card {
+            background-color: $colorPrimary;
+            border: none;
+            img {
+                width: 80%;
+            }
+            h2 {
+                left: 40%;
+            }
+        }
+    }
+    .join {
+        a {
+            display: block;
+            margin: auto auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            width: 50%;
+        }
+    }
+    .about, .events {
+        section {
+            article {
+                h2 {
+                    font-size: 1.5em;
+                }
+                a {
+                    display: block;
+                    margin: 1em auto 1em auto;
+                    width: 50%;
+                }
+            }
+            img {
+                display: block;
+                margin: auto auto;
+            }
+        }
+    }
+    .contact-info {
+        height: 44vh;
+    }
+}
+/*Tablet Landscape*/
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+    h1 {
+        font-size: 3em;
+    }
+    .landing {
+        h1 {
+            padding-top: 1em;
+        }
+    }
+}

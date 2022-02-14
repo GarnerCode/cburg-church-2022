@@ -1,0 +1,386 @@
+/*Color Palette*/
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 100%;
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0%;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/*Overall Styles*/
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #413f3f;
+}
+
+body {
+  background-color: #e0fdf6;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 4em;
+  text-shadow: 2px 2px 5px #bdbbbb;
+}
+
+.col-lg-6, .col-12 {
+  padding: 0;
+}
+
+/*Navigation*/
+nav.bg-dark {
+  background: #1abbd1;
+  background: linear-gradient(135deg, #56d0b2 0%, #1abbd1 100%);
+}
+
+nav .navbar-brand {
+  font-size: 2em;
+  font-family: 'Ubuntu', sans-serif;
+  color: #e0fdf6 !important;
+}
+
+.landing {
+  text-shadow: 2px 2px 5px #bdbbbb;
+  text-align: center;
+}
+
+.landing h1 {
+  padding-top: 3em;
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+}
+
+.landing h2 {
+  margin-top: 1em;
+  margin-bottom: 3vh;
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+}
+
+.landing a {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: #413f3f;
+  font-size: 1.5em;
+  border: 2px solid #56d0b2;
+  padding: 0.3em;
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+}
+
+.landing a:hover {
+  background-color: #56d0b2;
+  -webkit-box-shadow: 0 2px 10px #bdbbbb;
+          box-shadow: 0 2px 10px #bdbbbb;
+}
+
+.landing img {
+  width: 100%;
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+}
+
+.cards {
+  margin-top: 10vh;
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+}
+
+.cards .card img {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-box-shadow: 0 2px 10px #bdbbbb;
+          box-shadow: 0 2px 10px #bdbbbb;
+}
+
+.cards .card:hover img {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+}
+
+.cards .card h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #e0fdf6;
+  text-align: center;
+  text-shadow: 2px 2px 5px #413f3f;
+  font-weight: bold;
+}
+
+.join {
+  -webkit-animation: ease-in-out 1s fadeIn;
+          animation: ease-in-out 1s fadeIn;
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.join figure {
+  margin: 0;
+}
+
+.join figure img {
+  width: 100%;
+}
+
+.join h1 {
+  margin-top: 10vh;
+}
+
+.join h2 {
+  margin-bottom: 3vh;
+}
+
+.join a {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: #413f3f;
+  font-size: 1.5em;
+  border: 2px solid #56d0b2;
+  padding: 0.3em;
+  margin: 1em;
+}
+
+.join a:hover {
+  background-color: #56d0b2;
+  -webkit-box-shadow: 0 2px 10px #bdbbbb;
+          box-shadow: 0 2px 10px #bdbbbb;
+}
+
+.about section, .events section {
+  margin-top: 5vh;
+}
+
+.about section article, .events section article {
+  text-align: center;
+}
+
+.about section article h2, .events section article h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.about section article p, .events section article p {
+  text-align: justify;
+  padding: 0 2em 0 2em;
+}
+
+.about section article a, .events section article a {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: #413f3f;
+  font-size: 1.5em;
+  border: 2px solid #56d0b2;
+  padding: 0.3em;
+}
+
+.about section article a:hover, .events section article a:hover {
+  background-color: #56d0b2;
+  -webkit-box-shadow: 0 2px 10px #bdbbbb;
+          box-shadow: 0 2px 10px #bdbbbb;
+}
+
+.about section img, .events section img {
+  width: 80%;
+  -webkit-box-shadow: 0 2px 10px #bdbbbb;
+          box-shadow: 0 2px 10px #bdbbbb;
+}
+
+.about section .text-center, .events section .text-center {
+  text-align: center;
+}
+
+.contact {
+  margin-top: 5vh;
+  text-align: center;
+  padding: 0;
+}
+
+.contact .row {
+  padding: 0;
+  margin: 0;
+}
+
+.contact .row figure {
+  margin: 0;
+}
+
+.contact li {
+  padding: 1em;
+}
+
+.contact img {
+  width: 100%;
+}
+
+footer {
+  background: #1abbd1;
+  background: linear-gradient(135deg, #56d0b2 0%, #1abbd1 100%);
+  text-align: center;
+  padding-top: 3vh;
+}
+
+footer a {
+  margin: 1em;
+}
+
+footer a i {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  color: #e0fdf6;
+  font-size: 2em;
+}
+
+footer a i:hover {
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
+}
+
+footer p {
+  color: #e0fdf6;
+}
+
+/*Mobile Phone*/
+@media only screen and (max-width: 430px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  nav .navbar-brand {
+    font-size: 1em;
+  }
+  .landing h1 {
+    padding-top: 1em;
+  }
+  .cards .card {
+    display: block;
+    margin: auto auto;
+    margin-top: 1em;
+  }
+  .join a {
+    display: block;
+    margin: auto auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 50%;
+  }
+  .about section article h2, .events section article h2 {
+    font-size: 1.5em;
+  }
+  .about section article a, .events section article a {
+    display: block;
+    margin: 1em auto 1em auto;
+    width: 50%;
+  }
+  .about section img, .events section img {
+    display: block;
+    margin: auto auto;
+  }
+  .contact-info {
+    height: 60vh;
+  }
+}
+
+/*Tablet Portrait*/
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  nav .navbar-brand {
+    font-size: 2em;
+  }
+  .landing h1 {
+    padding-top: 1em;
+  }
+  .cards .card {
+    background-color: #e0fdf6;
+    border: none;
+  }
+  .cards .card img {
+    width: 80%;
+  }
+  .cards .card h2 {
+    left: 40%;
+  }
+  .join a {
+    display: block;
+    margin: auto auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 50%;
+  }
+  .about section article h2, .events section article h2 {
+    font-size: 1.5em;
+  }
+  .about section article a, .events section article a {
+    display: block;
+    margin: 1em auto 1em auto;
+    width: 50%;
+  }
+  .about section img, .events section img {
+    display: block;
+    margin: auto auto;
+  }
+  .contact-info {
+    height: 44vh;
+  }
+}
+
+/*Tablet Landscape*/
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+  h1 {
+    font-size: 3em;
+  }
+  .landing h1 {
+    padding-top: 1em;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
